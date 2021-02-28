@@ -1,0 +1,46 @@
+<section id="hero" class="d-flex  justify-content-center">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 text-white">
+            <div class="col-sm-12 col-xl-12">
+            <div class="icon-box">
+
+                <button type="button" class="btn btn-light btn-lg btn-block text-danger" *ngIf="cityForecastDetails != undefined">{{cityForecastDetails.name | uppercase}}</button>
+               
+                <div class="mt-5">
+
+                    <span class="float-left ml-5"> 
+                        <i class="ri-haze-line"></i>
+                        <h5 class="card-title" *ngIf="cityForecastDetails != undefined">{{cityForecastDetails.day}}</h5>
+                    </span>
+
+                    <span class="float-right mr-5">
+                        <i class="ri-mist-line"></i>
+                    <p *ngIf="cityForecastDetails != undefined">{{cityForecastDetails.sea_level}} hPa</p>
+                    </span>
+
+                    <span>
+                        <img src="../../assets/img/sunny.png" alt="image">
+                    </span>
+
+               </div>
+
+                <div class="card-body mt-3">
+                    <span class="text-center" *ngIf="cityForecastDetails != undefined"><h1 class="text-white">{{cityForecastDetails.temperature}} <sup>o</sup>C </h1></span>
+                </div>
+
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+            <div class="col-lg-2  col-md-6 col-12 mt-4" *ngFor="let forecast of forecastListDetails">
+              <div class="icon-box pb-1 pt-1" id="days" *ngIf="forecast != undefined">
+                <div class="text-white mb-3"><h3><a>{{forecast.dayName}}</a></h3></div>
+                <span class="text-white">{{forecast.temperature}}<sup>o</sup>C</span> 
+                <div class="text-white mt-3 mb-2 ">Sea Level: <h7>{{forecast.sea_level}} hPa</h7></div>          
+              </div>
+            </div>
+        </div>
+    </div> 
+</section>

@@ -1,0 +1,26 @@
+
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-2">
+          <h1>EUROPE WEATHER<span></span></h1>
+        </div>
+      </div>
+      <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-lg-4  col-md-6 col-12 mt-4" *ngFor="let city of EuropeanCityDetails" >
+          <div class="icon-box" (click)="onCity(city)">
+            <div class="card-header bg-black"><h3><a href="">{{city.name }}</a></h3></div>
+            <span class="text-white">{{city.temperature}}<sup>o</sup>C</span> 
+            <div class="text-white mt-2 mb-2 pb-2">
+              <i class="ri-sun-fill float-sm-left h6"></i>
+              <span class="text-white float-sm-left ml-2" style="font-size: small;">{{city.sunrise}}</span>
+              <span class="text-white float-sm-right ml-2" style="font-size: small;">{{city.sunset}}</span>
+              <i class="ri-haze-fill float-sm-right"></i>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+ 
